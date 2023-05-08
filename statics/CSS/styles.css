@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+.todo-app{
+     width: 100%;
+     max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#input-box{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 14px;
+    font-weight: 14px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 15px;
+    user-select: none;
+    position: relative;
+    text-decoration: none;
+}
+ul{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+ul input{
+    margin-left: 0.4rem;
+}
+ul img{
+    height: 28px;
+    width: 28px;
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul .ic{
+    margin-left: auto;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+ul .ic i{
+    margin-left: 0.3rem;
+    cursor: pointer;
+}
+
+.todo-app .details{
+    display: grid;
+    gap: 1rem;
+}
+.todo-app .details .r{
+    align-items: center;
+    justify-content: center;
+}
+.details input,
+.details textarea{
+    border: none;
+    background: #dadcde;
+    height: 2rem;
+    border-radius: 18px;
+    padding: 10px;
+    font-size: 16px;
+}
+.details textarea{
+    height: auto;
+    resize: none;
+}
+.row{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.row a{
+    text-decoration: none;
+    font-size: 15px;
+}
+.a{
+    margin-left: auto;
+}
+#complete{
+    background: #fff;
+}
+ul #mark{
+    font-size: 0.8rem;
+    margin-left: 0;
+    /* display: none; */
+}

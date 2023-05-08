@@ -1,0 +1,20 @@
+body{
+    background: #432525 !important;
+    color:aliceblue !important ;
+}
+
+.container_form form{
+    width: 50%;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+    margin-top: 2rem !important;
+}
+
+.container_form form div input{
+    width: 100%;
+    border-radius: 5px;
+    height: 1.6rem;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/CSS/styles.css' %}">
+    <title>My Todos</title>
+    <script src="https://kit.fontawesome.com/e29bf25393.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <div class="row">
+                <h1>Welcome {{request.user.username}} </h1>
+                <div class="a">
+                    {% if user.is_authenticated %}
+                    <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a><br><br>
+                    {% else %}
+                    <a href="/login"><i class="fa-solid fa-right-to-bracket"></i></a><br><br>
+                    {% endif %}
+                </div>
+            </div>
+            <h2>To-Do List</h2>
+            <a href="/add_task"><button type="submit">Add New</button></a>
+            {% for i in form reversed %}
+            {% if i.user.username == user.username %}
+            <ul id="list-container">
+                {% if i.complete == "Completed" %}
+                <img id="icon2" src="{% static 'images/checked.png' %}">
+                <li>{{i.title}} </li>
+                {% else %}
+                <img id="icon1" src="{% static 'images/unchecked.png' %}">
+                <li>{{i.title}} </li>
+                {% endif %}
+                <div class="ic">
+                    <a href="{% url 'task_edit' i.id %}"><i class="fa-sharp fa-regular fa-pen-to-square"></i></a>
+                    <a href="{% url 'delete_task' i.id %}"><i class="fa-solid fa-xmark"></i></a>
+                </div>
+            </ul>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+
+    </div>
+    <script src="{% static 'Js/script.js' %}"></script>
+</body>
+
+</html>
