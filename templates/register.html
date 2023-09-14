@@ -5,51 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{% static '/CSS/register.css' %}">
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
 </head>
 
 <body>
-    <div class="container container_form">
-        <h1>Registration</h1>
-        <form class="mt-5" action="#" method="post">
-            {% csrf_token %}
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Username</label>
-                <!-- <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" > -->
-                {{form.username}}
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">First Name</label>
-                <!-- <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" > -->
-                {{form.first_name}}
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                <!-- <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" > -->
-                {{form.last_name}}
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" > -->
-                {{form.email}}
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <!-- <input type="password" class="form-control" id="exampleInputPassword1" name="password1" > -->
-                {{form.password1}}
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                <!-- <input type="password" class="form-control" id="exampleInputPassword2" name="password2" > -->
-                {{form.password2}}
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-    </div>
+    <form class="container login" action="#" name="myform" method="post">
+        {% csrf_token %}
+        <h1>Register</h1>
+
+        {{form.username}}
+        {{form.first_name}}
+        {{form.last_name}}
+        {{form.email}}
+        {{form.password1}}
+        {{form.password2}}
+        <button type="submit" class="btn btn-dark">Register</button>
+        <p class="mt-2">Already have an account? <a href="/logins">Sign In</a></p>
+    </form>
 </body>
+<style>
+    body {
+        background: #322626a4;
+    }
+
+    .login {
+        display: grid;
+        background: #c9c0c0;
+        margin-top: 4rem;
+        padding: 2rem;
+        width: 40% !important;
+        border-radius: 12px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .login input {
+        border-radius: 9px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    input {
+        border: none;
+        margin-bottom: 12px;
+        padding: 4px 4px 4px 8px;
+    }
+
+    input:focus {
+        outline: none !important;
+    }
+
+    div {
+        border-radius: 12px !important;
+    }
+</style>
+
+<script>
+    var inp = document.getElementsByTagName('input');
+
+    inp[1].placeholder = "Username"
+    inp[2].placeholder = "First Name"
+    inp[3].placeholder = "Last Name"
+    inp[4].placeholder = "Email"
+    inp[5].placeholder = "Password"
+    inp[6].placeholder = "Confirm Password"
+
+</script>
 
 </html>

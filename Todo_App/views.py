@@ -35,7 +35,7 @@ def reg(request):
             form.save()
             user = form.cleaned_data.get('username')
             messages.success(request, 'Account has been created for '+user)
-            return redirect('/')
+            return redirect('/login')
         else:
             messages.error(request, form.errors.get('username'))
     context = {'form': form}
